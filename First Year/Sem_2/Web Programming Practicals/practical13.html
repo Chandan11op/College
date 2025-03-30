@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String to Number Conversion</title>
+</head>
+<body>
+
+    <h2>Convert String to Number</h2>
+
+    <label>Enter a number (as text):</label>
+    <input type="text" id="numInput"><br><br>
+    <button onclick="convertNumber()">Convert</button>
+
+    <p>Before Conversion: <span id="before"></span></p>
+    <p>After Conversion: <span id="after"></span></p>
+
+    <script>
+        function convertNumber() {
+            let input = document.getElementById("numInput").value;
+            let beforeType = typeof input; // Get type before conversion
+
+            let convertedNumber = Number(input); // Convert string to number
+            let afterType = typeof convertedNumber; // Get type after conversion
+
+            document.getElementById("before").innerText = input + " (Type: " + beforeType + ")";
+            document.getElementById("after").innerText = convertedNumber + " (Type: " + afterType + ")";
+        }
+    </script>
+
+</body>
+</html>

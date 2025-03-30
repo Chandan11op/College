@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prime Numbers (1-100)</title>
+</head>
+<body>
+
+    <h2>Prime Numbers from 1 to 100</h2>
+    <button onclick="displayPrimes()">Show Prime Numbers</button>
+    <p id="result"></p>
+    <script>
+        function isPrime(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= num / 2; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function displayPrimes() {
+            let primes = "";
+            for (let i = 1; i <= 100; i++) {
+                if (isPrime(i)) {
+                    primes += i + " ";
+                }
+            }
+            document.getElementById("result").innerText = primes;
+        }
+    </script>
+
+</body>
+</html>
